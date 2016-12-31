@@ -1,0 +1,12 @@
+body {
+  background-color: lightgrey;
+}
+
+.row {
+
+  border: solid 1px black;
+}
+
+#catFood, #dogFood {
+  border: solid 1px white;
+}
