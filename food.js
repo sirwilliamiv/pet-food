@@ -10,14 +10,21 @@ console.log("javscript!")
 var dog;
 var dogString ="";
 var catString ="";
-var dogList = document.getElementById('#dogFood')
+var dogList = document.getElementById('dogFood')
 
 function dogFoodInDom(dog) {
 console.log(dog)
+// looping brand name
 for (var i = 0; i < dog.dog_brands.length; i++) {
   var currentFood = dog.dog_brands[i]
+    // looping types
+    for (var t = 0; t < currentFood.types.length; t++) {
+    var currentType = currentFood.types[i]
+      console.log(currentType)
+    }
   // console.log(dog)
-  dogString += `<h1>${currentFood.name}</h1>`
+  dogString += `<h1>Brand: ${currentFood.name}</h1>`
+  dogString += `<h4>Type: ${currentType.type}</h4>`
 
   // console.log(dogString)
   }
