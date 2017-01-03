@@ -11,20 +11,30 @@ var dog;
 var dogString ="";
 var catString ="";
 var dogList = document.getElementById('dogFood')
+var currentFood;
+var currentType;
+var currentVolume;
+
 
 function dogFoodInDom(dog) {
 console.log(dog)
 // looping brand name
 for (var i = 0; i < dog.dog_brands.length; i++) {
-  var currentFood = dog.dog_brands[i]
+   currentFood = dog.dog_brands[i]
     // looping types
     for (var t = 0; t < currentFood.types.length; t++) {
-    var currentType = currentFood.types[i]
-      console.log(currentType)
+        currentType = currentFood.types[t]
+      // console.log(currentType)
+      for (var v = 0; v < currentType.volumes.length; v++) {
+         currentVolume = currentType.volumes[v]
+          // console.log("the Volumes are: ", currentVolume)
+      }
     }
   // console.log(dog)
   dogString += `<h1>Brand: ${currentFood.name}</h1>`
   dogString += `<h4>Type: ${currentType.type}</h4>`
+  dogString += `<h4>Size: ${currentVolume.name}</h4>`
+  dogString += `<h4>Price: ${currentVolume.price}</h4>`
 
   // console.log(dogString)
   }
